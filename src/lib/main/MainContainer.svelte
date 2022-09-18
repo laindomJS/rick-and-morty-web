@@ -1,6 +1,7 @@
 <script>
     import { getCharacters } from '../../services/getCharacters';
     import CharactersContainer from './CharactersContainer.svelte';
+    import Spinner from './Spinner.svelte';
 
     let characters = [];
     let page = 1;
@@ -24,12 +25,20 @@
 
 <section class="w-full p-12">
     
-    <input class="p-4 m-2 w-2/5 bg-gray-400 h-12 placeholder:text-black placeholder:font-bold" type="text" value={char} on:input={handleInput} placeholder="Search character">
+    <div class="w-full">
+        <input class="p-4 m-2 w-2/5 bg-gray-400 h-12 placeholder:text-black placeholder:font-bold" type="text" value={char} on:input={handleInput} placeholder="Search character...">
+    </div>
 
     <section class="w-full my-12 flex items-center justify-center space-x-10">
         <button class="buttons" on:click={() => page--} disabled={page === 1}>Previous</button>
         <button class="buttons" on:click={() => page++} disabled={page === 42}>Next</button>
     </section>
 
-    <CharactersContainer characters={characters} />
+    {#if characters.length === 0}
+       <main class="w-full relative">
+            <Spinner />
+       </main>
+        {:else}
+        <CharactersContainer characters={characters} />
+    {/if}
 </section>
