@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .buttons {
-    @apply w-32 bg-gray-500 text-white h-10 font-bold transition-all duration-300 hover:bg-gray-700;
+    @apply w-32 bg-gray-500 text-white h-10 font-bold transition-all duration-300 hover:bg-gray-700 disabled:opacity-40;
 }
 
 .male {

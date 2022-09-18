@@ -23,8 +23,8 @@
 
 <main class="w-full p-12">
     <section class="w-full my-2 px-8 flex items-center justify-center space-x-10">
-        <button class="buttons" on:click={previousPage}>Previous</button>
-        <button class="buttons" on:click={nextPage}>Next</button>
+        <button class="buttons" on:click={previousPage} disabled={page === 1}>Previous</button>
+        <button class="buttons" on:click={nextPage} disabled={page === 42}>Next</button>
     </section>
     <main class="w-full p-12 grid grid-cols-2 gap-10 justify-items-center">
         {#each characters as character}
