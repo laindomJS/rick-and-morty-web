@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.buttons {
+    @apply w-32 bg-gray-500 text-white h-10 font-bold transition-all duration-300 hover:bg-gray-700;
+}
+
+.male {
+    @apply text-lg text-blue-500;
+}
+
+.female {
+    @apply text-lg text-pink-500;
+}
+
+.alive {
+    @apply text-lg text-green-500;
+}
+
+.dead {
+    @apply text-lg text-red-600;
+}

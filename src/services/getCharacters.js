@@ -5,3 +5,4 @@ export const getCharacters = async (url) => {
     characters = data.results;
     return characters;
 }
+
