@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 .title {
-    @apply text-3xl font-bold text-green-400 underline decoration-2 decoration-sky-500 cursor-default transition-all duration-300 hover:no-underline underline-offset-8;
+    @apply text-4xl font-bold text-green-400 underline decoration-4 decoration-sky-500 underline-offset-8 cursor-default transition-all duration-700 hover:text-sky-500 hover:decoration-green-400 dark:text-sky-500 dark:decoration-green-400 dark:hover:text-green-400 dark:hover:decoration-sky-500;
+}
+
+.input {
+    @apply p-4 m-2 w-1/4 bg-white border-2 border-gray-900 dark:border-none h-12 placeholder:text-black placeholder:font-bold transition-all duration-300;
 }
 
 .buttons {

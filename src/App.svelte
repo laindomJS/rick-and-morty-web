@@ -4,8 +4,8 @@
   import MainContainer from './lib/main/MainContainer.svelte';
 </script>
 
-<section class="w-full h-screen bg-white dark:bg-gray-800">
-  <Navbar />
-  <MainContainer />
-</section>
+
+<Navbar />
+<MainContainer />
+
 

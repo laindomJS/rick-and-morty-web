@@ -2,11 +2,12 @@
     import { getCharacters } from '../../services/getCharacters';
     import CharactersContainer from './CharactersContainer.svelte';
     import Spinner from './Spinner.svelte';
+    import searchIcon from '../../assets/search.svg';
 
     let characters = [];
     let page = 1;
     $: url = `https://rickandmortyapi.com/api/character/?page=${page}`;
-    let char = "";
+    $:char = "";
 
     $: {
         getCharacters(url).then(data => characters = data);
@@ -14,8 +15,8 @@
 
     const handleInput = (e) => char = e.target.value;
     $: {
-        if(char.length > 2) {
-            characters = characters.filter((character) => character.name.toLowerCase().includes(char));
+        if(char.length > 1) {
+            characters = characters.filter((character) => character.name.toLowerCase().includes(char.toLowerCase()));
         } else if (char.length === 0) {
             getCharacters(url).then(data => characters = data);
         }
@@ -23,22 +24,24 @@
 </script>
 
 
-<section class="w-full p-12">
-    
-    <div class="w-full">
-        <input class="p-4 m-2 w-2/5 bg-gray-400 h-12 placeholder:text-black placeholder:font-bold" type="text" value={char} on:input={handleInput} placeholder="Search character...">
+<section class="w-full h-screen bg-white dark:bg-gray-800">
+    <div class="p-12">
+        <div class="w-full relative">
+            <input class="input" type="text" value={char} on:input={handleInput} placeholder="Search character...">
+            <img class="absolute top-4 left-64" src={searchIcon} alt="Search Icon">
+        </div>
+
+        <section class="w-full my-12 flex items-center justify-center space-x-10">
+            <button class="buttons" on:click={() => page--} disabled={page === 1}>Previous</button>
+            <button class="buttons" on:click={() => page++} disabled={page === 42}>Next</button>
+        </section>
     </div>
 
-    <section class="w-full my-12 flex items-center justify-center space-x-10">
-        <button class="buttons" on:click={() => page--} disabled={page === 1}>Previous</button>
-        <button class="buttons" on:click={() => page++} disabled={page === 42}>Next</button>
-    </section>
-
-    {#if characters.length === 0}
-       <main class="w-full relative">
+    <main class="w-full h-full bg-white dark:bg-gray-800 grid grid-cols-3 gap-10 justify-items-center relative">
+        {#if characters.length === 0}
             <Spinner />
-       </main>
         {:else}
-        <CharactersContainer characters={characters} />
-    {/if}
+            <CharactersContainer characters={characters} />
+        {/if}
+    </main>
 </section>

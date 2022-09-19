@@ -1,8 +1,10 @@
 <script>
+  import { toggle } from '../../utils/toggle.js';
   let condition = true;
-  function toggle () {
+  
+  function changeTheme () {
     const html = window.document.querySelector('html');
-    html.classList.toggle('dark');
+    toggle(html);
     if(html.classList.contains('dark')) {
       condition = false
     } else {
@@ -12,8 +14,9 @@
 </script>
 
 
-<nav class="py-4 px-12 flex items-center justify-between border-b-4 border-sky-500">
-    <h1 class="title">Rick and Morty Web</h1>
+<nav class="w-full bg-white dark:bg-gray-800 py-6 px-12 flex items-center justify-between border-b-4 border-sky-500">
+    
+  <h1 class="title">Rick and Morty Web</h1>
 
     <section class="flex items-center space-x-5">
       <a href="https://github.com/laindomJS" target="_blank">
@@ -22,7 +25,7 @@
         </svg>
      </a>
         <label for="default-toggle" class="inline-flex relative items-center cursor-pointer">
-            <input on:click={toggle} type="checkbox" value="" id="default-toggle" class="sr-only peer">
+            <input on:click={changeTheme} type="checkbox" value="" id="default-toggle" class="sr-only peer">
             <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
             
             <span class="ml-3 text-base font-medium text-gray-900 dark:text-gray-300">
