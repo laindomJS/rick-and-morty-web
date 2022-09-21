@@ -6,19 +6,21 @@
 
     let characters = [];
     let page = 1;
-    $: url = `https://rickandmortyapi.com/api/character/?page=${page}`;
+    $:url = `https://rickandmortyapi.com/api/character/?page=${page}`;
     $:char = "";
 
-    $: {
+    function loadCharacters() {
         getCharacters(url).then(data => characters = data);
     }
+    $:loadCharacters();
 
     const handleInput = (e) => char = e.target.value;
+    
     $: {
         if(char.length > 1) {
             characters = characters.filter((character) => character.name.toLowerCase().includes(char.toLowerCase()));
         } else if (char.length === 0) {
-            getCharacters(url).then(data => characters = data);
+            loadCharacters();
         }
     }
 </script>
