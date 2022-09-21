@@ -4,8 +4,8 @@
   import MainContainer from './lib/main/MainContainer.svelte';
 </script>
 
-
 <Navbar />
 <MainContainer />
+
 
 

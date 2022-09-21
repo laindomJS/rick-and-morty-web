@@ -24,7 +24,7 @@
 </script>
 
 
-<section class="w-full h-screen bg-white dark:bg-gray-800">
+<section class="w-full bg-white dark:bg-gray-800">
     <div class="p-12">
         <div class="w-full relative">
             <input class="input" type="text" value={char} on:input={handleInput} placeholder="Search character...">
