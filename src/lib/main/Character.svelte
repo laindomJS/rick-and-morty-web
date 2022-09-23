@@ -6,7 +6,7 @@
     <article class="character__card">
         <img class="object-cover rounded-lg" src={character.image} alt={character.name}>
         <div class="py-4">
-            <h2 class="text-black dark:text-white font-bold text-3xl">{character.name}</h2>
+            <h2 class="text-black dark:text-white font-bold text-3xl border-b-4 border-green-500 w-fit">{character.name}</h2>
             <div class="my-4">
                 <div>
                     <span class="font-bold dark:text-white text-black text-xl">Gender:</span>

@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .title {
-    @apply text-4xl font-bold text-green-400 underline decoration-4 decoration-sky-500 underline-offset-8 cursor-default transition-all duration-700 hover:text-sky-500 hover:decoration-green-400 dark:text-sky-500 dark:decoration-green-400 dark:hover:text-green-400 dark:hover:decoration-sky-500;
+    @apply text-lg md:text-4xl font-bold text-green-400 underline decoration-4 decoration-sky-500 underline-offset-8 cursor-default transition-all duration-700 hover:text-sky-500 hover:decoration-green-400 dark:text-sky-500 dark:decoration-green-400 dark:hover:text-green-400 dark:hover:decoration-sky-500;
 }
 
 .input {
-    @apply p-4 m-2 w-1/4 bg-white border-2 border-gray-900 dark:border-transparent h-12 placeholder:text-black placeholder:font-bold transition-all duration-300;
+    @apply p-4 m-2 w-full md:w-1/4 bg-white border-2 border-gray-900 dark:border-transparent h-12 placeholder:text-black placeholder:font-bold transition-all duration-300;
 }
 
 .buttons {
@@ -15,7 +15,7 @@
 }
 
 .character__card {
-    @apply p-6 h-fit border-2 border-sky-500 dark:border-violet-500 text-white rounded-lg w-80 transition-all duration-300 hover:scale-105 hover:shadow-sky-500 hover:shadow-xl dark:hover:shadow-violet-600 dark:hover:shadow-xl;
+    @apply p-6 h-fit border-2 border-sky-500 dark:border-violet-500 text-white rounded-lg w-72 md:w-80 transition-all duration-300 hover:scale-105 hover:shadow-sky-500 hover:shadow-xl dark:hover:shadow-violet-600 dark:hover:shadow-lg;
 }
 
 .male {

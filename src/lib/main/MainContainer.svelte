@@ -30,7 +30,7 @@
     <div class="p-12">
         <div class="w-full relative">
             <input class="input" type="text" value={char} on:input={handleInput} placeholder="Search character...">
-            <img class="absolute top-4 left-64" src={searchIcon} alt="Search Icon">
+            <img class="absolute top-4 left-64 invisible md:visible" src={searchIcon} alt="Search Icon">
         </div>
 
         <section class="w-full my-12 flex items-center justify-center space-x-10">
@@ -39,7 +39,7 @@
         </section>
     </div>
 
-    <main class="w-full h-full bg-white dark:bg-gray-800 grid grid-cols-3 gap-10 justify-items-center relative">
+    <main class="w-full h-full bg-white dark:bg-gray-800 grid grid-cols-1 md:grid-cols-3 gap-10 justify-items-center relative">
         {#if characters.length === 0}
             <Spinner />
         {:else}
